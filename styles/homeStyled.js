@@ -4,19 +4,19 @@ export const OuterWrapper = styled.div`
     display: flex;
     flex-direction: column;
     color: red;
-    /* margin-left: 50px; */
+    margin: 0px 50px;
 `
 
 export const LowerWrapper = styled.div`
     display: flex;
     flex-direction: row;
-    color: black;
-    justify-content: space-around;
+    justify-content: space-between;
 `
 
 export const RightWrapper = styled.div`
     display: flex;
     flex-direction: column;
+    margin-left: 20px;
 `
 
 export const CurrentDay = styled.div`

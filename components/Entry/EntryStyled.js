@@ -5,6 +5,7 @@ export const OuterWrapper = styled.div`
     flex-direction: row;
     justify-content: center;
     margin: 5px 0px;
+    color: blue;
 `
 
 export const ImageDiv = styled.div`
@@ -18,7 +19,7 @@ export const TextDiv = styled.div`
     display: flex;
     flex-direction: column;
     /* line-height: 0px; */
-    width: 450px;
+    width: 400px;
 `
 
 export const EntryTitle = styled.div`

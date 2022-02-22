@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const OuterWrapper = styled.div`
     display: flex;
     flex-direction: column;
+    color: green;
 `
 
 export const WeekDiv = styled.div`
