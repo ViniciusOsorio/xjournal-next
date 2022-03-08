@@ -1,11 +1,17 @@
 import React from "react";
-import { OuterWrapper } from "./NavBarStyled";
+import { OuterWrapper,
+         ProfilePic, 
+         SearchBar,
+         ModeButton } from "./NavBarStyled";
 
 const NavBar = () => {
 
     return(
         <OuterWrapper>
-            <h1>Navbar</h1>
+            <ProfilePic/>
+            <ModeButton>Teste</ModeButton>
+            <ModeButton>Teste</ModeButton>
+            <SearchBar placeholder="Pesquisar"/>
         </OuterWrapper>
     )
 

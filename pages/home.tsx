@@ -25,13 +25,11 @@ const Home = () => {
         <>
             <NavBar />
             <OuterWrapper>
-                
-                <h1>Home</h1>
                 <Year/>
                 <LowerWrapper>
                     <Month />
                     <RightWrapper>
-                        <CurrentDay>ELDEN RING COUNTDOWN: 3 DAYS</CurrentDay>
+                        <CurrentDay>ELDEN RING IS GOTY</CurrentDay>
                         {organizeEntries()}
                     </RightWrapper>
                 </LowerWrapper>

@@ -4,6 +4,7 @@ import { OuterWrapper,
          ImageDiv,
          EntryTitle,
          EntryText } from "../Entry/EntryStyled";
+import { truncate } from "lodash";
 
 const Entry = () => {
 
@@ -12,7 +13,7 @@ const Entry = () => {
             <ImageDiv/>
             <TextDiv>
                 <EntryTitle>Entrada 1</EntryTitle>
-                <EntryText>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident quae officiis iure quas, nobis aut? Natus laborum repellat quaerat incidunt, sapiente magni, animi eligendi corrupti facere sequi quae. Aperiam, blanditiis.</EntryText>
+                <EntryText>{truncate('Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident quae officiis iure quas, nobis aut? Natus laborum repellat quaerat incidunt, sapiente magni, animi eligendi corrupti facere sequi quae. Aperiam, blanditiis.', {length: 200})}</EntryText>
             </TextDiv>
             
         </OuterWrapper>
