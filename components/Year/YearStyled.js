@@ -27,3 +27,14 @@ export const IndivMonth = styled.div`
     font-weight: bold;
     font-size: 20px;
 `
+
+export const Buttons = styled.button`
+    border: none;
+    font-weight: bold;
+    color: pink;
+    font-size:20px;
+    background-color: white;
+    &:hover{
+        color: gray;
+    }
+`
