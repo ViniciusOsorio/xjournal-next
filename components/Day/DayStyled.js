@@ -6,11 +6,12 @@ export const OuterWrapper = styled.div `
     width: 60px;
     height: 60px;
     margin-top: 0px;
+    border-radius: 15px;
 `
 
 export const DayText = styled.h1`
     line-height: 30px;
     text-align: center;
-    font-size: 25px;
+    font-size: 22px;
     line-height: 18px;
 `

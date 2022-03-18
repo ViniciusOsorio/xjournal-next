@@ -7,7 +7,7 @@ export const OuterWrapper = styled.div`
     color: yellow;
     border-bottom: 1px gray solid;
     justify-content: space-evenly;    
-    padding: 5px 40px;
+    padding: 5px 45px;
     margin-bottom: 25px;
 `
 export const ProfilePic = styled.div`

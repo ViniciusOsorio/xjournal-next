@@ -8,6 +8,9 @@ import NavBar from "../components/NavBar/NavBar";
 import Year from "../components/Year/Year";
 import Month from "../components/Month/Month";
 import Entry from "../components/Entry/Entry";
+import Calendar from "../components/Calendar/Calendar";
+import {ThemeProvider} from "styled-components";
+import { LIGHT } from "../constants/theme";
 
 const Home = () => {
     
@@ -22,19 +25,20 @@ const Home = () => {
     }
     
     return(
-        <>
+        <ThemeProvider theme={LIGHT}>
             <NavBar />
             <OuterWrapper>
                 <Year/>
                 <LowerWrapper>
-                    <Month />
+                    {/* <Month /> */}
+                    <Calendar onChange={(date) => console.log(date)}/>
                     <RightWrapper>
                         <CurrentDay>ELDEN RING IS GOTY</CurrentDay>
                         {organizeEntries()}
                     </RightWrapper>
                 </LowerWrapper>
             </OuterWrapper>
-        </>
+        </ThemeProvider>
     )
 }
 
