@@ -5,13 +5,14 @@ export const OuterWrapper = styled.div`
     flex-direction: row;
     justify-content: center;
     margin: 5px 0px;
+    margin-right: 80px;
     color: blue;
 `
 
 export const ImageDiv = styled.div`
     border: 1px solid black;
-    width: 75px;
-    height: 75px;
+    width: 65px;
+    height: 65px;
     margin-right: 15px; 
 `
 
@@ -23,9 +24,9 @@ export const TextDiv = styled.div`
 `
 
 export const EntryTitle = styled.div`
-    font-size: 18px; 
+    font-size: 16px; 
 `
 
 export const EntryText = styled.div`
-    font-size: 12px;
+    font-size: 10px;
 `

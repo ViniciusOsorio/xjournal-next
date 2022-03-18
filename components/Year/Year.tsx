@@ -2,7 +2,6 @@ import react, {useEffect, useState} from "react";
 import { OuterWrapper,
          YearDiv,
          MonthDiv,
-         IndivMonth,
          Buttons } from "./YearStyled";
 
 const Year = () => {
@@ -16,18 +15,18 @@ const Year = () => {
                 <Buttons> {'>'} </Buttons>
             </YearDiv>
             <MonthDiv>
-                <IndivMonth><Buttons>JAN</Buttons></IndivMonth>
-                <IndivMonth><Buttons>FEV</Buttons></IndivMonth>
-                <IndivMonth><Buttons>MAR</Buttons></IndivMonth>
-                <IndivMonth><Buttons>ABR</Buttons></IndivMonth>
-                <IndivMonth><Buttons>MAI</Buttons></IndivMonth>
-                <IndivMonth><Buttons>JUN</Buttons></IndivMonth>
-                <IndivMonth><Buttons>JUL</Buttons></IndivMonth>
-                <IndivMonth><Buttons>AGO</Buttons></IndivMonth>
-                <IndivMonth><Buttons>SET</Buttons></IndivMonth>
-                <IndivMonth><Buttons>OUT</Buttons></IndivMonth>
-                <IndivMonth><Buttons>NOV</Buttons></IndivMonth>
-                <IndivMonth><Buttons>DEZ</Buttons></IndivMonth>
+                <Buttons>JAN</Buttons>
+                <Buttons>FEV</Buttons>
+                <Buttons>MAR</Buttons>
+                <Buttons>ABR</Buttons>
+                <Buttons>MAI</Buttons>
+                <Buttons>JUN</Buttons>
+                <Buttons>JUL</Buttons>
+                <Buttons>AGO</Buttons>
+                <Buttons>SET</Buttons>
+                <Buttons>OUT</Buttons>
+                <Buttons>NOV</Buttons>
+                <Buttons>DEZ</Buttons>
             </MonthDiv>
         </OuterWrapper>
     )
