@@ -21,6 +21,5 @@ export const RightWrapper = styled.div`
 
 export const CurrentDay = styled.div`
     font-size: 20px;
-    margin-top:25px;
     margin-bottom: 20px;
 `

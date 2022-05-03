@@ -30,7 +30,7 @@ const Home = () => {
         <ThemeProvider theme={LIGHT}>
             <NavBar />
             <OuterWrapper>
-                <Year/>
+                {/* <Year/> */}
                 <LowerWrapper>
                     {/* <Month /> */}
                     <Calendar onChange={(date) => console.log(date)}/>
