@@ -5,6 +5,8 @@ export const OuterWrapper = styled.div`
     flex-direction: column;
     color: red;
     margin: 0px 50px;
+    margin-top: 25px;
+    height: 100vh;
 `
 
 export const LowerWrapper = styled.div`
