@@ -7,9 +7,10 @@ import {
     MoodDiv,
     StyledLabel,
     StyledButton,
-    ButtonDiv,
-    MoodCard
+    ButtonDiv
 } from '../styles/entryStyled';
+
+import MoodCard from '../components/MoodCard/MoodCard'
 
 import NavBar from "../components/NavBar/NavBar";
 
@@ -21,11 +22,13 @@ const Entry = () => {
             <EntryDiv>
                 <StyledLabel>How are you feeling?</StyledLabel>
                     <MoodDiv>                        
-                        <MoodCard>Happy</MoodCard>
-                        <MoodCard>Sad</MoodCard>
-                        <MoodCard>Angry</MoodCard>
-                        <MoodCard>Confused</MoodCard>
-                        <MoodCard>Neutral</MoodCard>
+                        <MoodCard mood={1}/>
+                        <MoodCard mood={2}/>
+                        <MoodCard mood={3}/>
+                        <MoodCard mood={4}/>
+                        <MoodCard mood={5}/>
+                        <MoodCard mood={6}/>
+                        <MoodCard mood={7}/>
                     </MoodDiv>
                 <StyledLabel>How is your day going?</StyledLabel>
                 <EntryText rows={10} />

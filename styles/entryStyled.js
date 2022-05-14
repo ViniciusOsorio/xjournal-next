@@ -38,7 +38,7 @@ export const EntryText = styled.textarea`
 
 export const ButtonDiv = styled.div`
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     background-color: aquamarine;
