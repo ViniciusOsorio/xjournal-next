@@ -58,7 +58,7 @@ export const MoodCard = styled.button`
     height: 180px;
     border: 1px solid black;
     margin: 15px 0px;
-    justify-content: flex-start;
+    justify-content: flex-start;    
     &:hover{
         border: 2px solid black;
     }
