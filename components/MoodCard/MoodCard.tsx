@@ -3,47 +3,60 @@ import { useState, useEffect } from 'react'
 
 import {
     OuterWrapper,
-    CardName
+    CardName,
+    MoodIcon
 } from './MoodCardStyled'
+
+import { 
+    FaRegTired,
+    FaRegMeh,
+    FaRegFrown,
+    FaRegLaughBeam,
+    FaRegLaugh,
+    FaRegSmile,
+    FaRegAngry
+} from "react-icons/fa";
 
 const MoodCard = (props) => {
 
     const p = props;
     const [name, setName] = useState('')
     const [color, setColor] = useState('')
-    const [isSelected, setIsSelected] = useState('')
+    const [isSelected, setIsSelected] = useState(false)
+    const iconW = '20px'
+    const iconH = '20px'
     
     useEffect(()=> {
         const setCardConfig = () => {
         
             switch (p.mood){
-                case 1:
+                case 4:
                     setName('Neutral')
-                    setColor('grey')
+                    setColor('#585958')
                     break
-                case 2:
+                case 5:
                     setName('Happy')
-                    setColor('lightgreen')
+                    setColor('#04ff00')
                     break
                 case 3:
                     setName('Sad')
-                    setColor('lightblue')
+                    setColor('#3f70bf')
                     break
-                case 4:
+                case 7:
                     setName('Fantastic')
-                    setColor('green')
+                    setColor('#005ef5')
                     break
-                case 5:
+                case 1:
                     setName('Angry')
-                    setColor('red')
+                    setColor('#ff1e00')
                     break
                 case 6:
                     setName('Great')
-                    setColor('blue')
+                    setColor('#002e91')
                     break
-                case 7:
+                case 2:
                     setName('Stressed')
-                    setColor('yellow')
+                    setColor('#fa6800')
                     break                  
                 default:
                     break
@@ -51,11 +64,40 @@ const MoodCard = (props) => {
         }
         setCardConfig()
     }, [])
+
+    const getMoodIcon = () => {
+        switch(p.mood){
+            case 4: //neutral
+                return <FaRegMeh size={30}/>;
+                break;
+            case 5: //happy
+                return <FaRegSmile size={30} />;
+                break;
+            case 3: //sad
+                return <FaRegFrown size={30} />
+                break;
+            case 7: //fantastic
+                return <FaRegLaughBeam size={30} />
+                break;
+            case 1: //angry
+                return <FaRegAngry size={30} />
+                break;
+            case 6: //great
+                return <FaRegLaugh size={30} />
+                break;
+            case 2: //stressed
+                return <FaRegTired size={30} />
+                break;                                                    
+            default:
+                break;
+        }
+    }
     
     
 
     return(
-        <OuterWrapper color={color} /* onClick={setIsSelected(true)} */>
+        <OuterWrapper color={color} onClick={p.onClick} selected={p.selected}>
+            <MoodIcon>{getMoodIcon()}</MoodIcon>
             <CardName>{name}</CardName>
         </OuterWrapper>
     )

@@ -8,7 +8,7 @@ export const OuterWrapper = styled.div`
 export const EntryDiv = styled.div`
     display: flex;
     flex-direction: column;
-    background-color: cyan;
+    /* background-color: cyan; */
     padding: 30px 40px;
 `
 export const MoodDiv = styled.div`
@@ -35,6 +35,8 @@ export const EntryText = styled.textarea`
     width: 100%;
     resize: none;
     margin-bottom: 25px;
+    padding: 10px;
+    border-radius: 20px;
 `
 
 export const ButtonDiv = styled.div`
@@ -42,7 +44,7 @@ export const ButtonDiv = styled.div`
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background-color: aquamarine;
+    /* background-color: aquamarine; */
     padding: 5px 20px;
 `
 
@@ -70,6 +72,9 @@ export const TagInput = styled.input`
     width: 100%;
     height: 30px;
     font-size: 15px;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid black
 `
 
 export const SelectedTags = styled.div`
