@@ -2,12 +2,14 @@ import React from "react";
 import {
     OuterWrapper,
     EntryDiv,
-    EntryTitle,
+    TagInput,
     EntryText,
     MoodDiv,
     StyledLabel,
     StyledButton,
-    ButtonDiv
+    ButtonDiv,
+    SelectedTags,
+    MoodCardDiv
 } from '../styles/entryStyled';
 
 import MoodCard from '../components/MoodCard/MoodCard'
@@ -22,16 +24,19 @@ const Entry = () => {
             <EntryDiv>
                 <StyledLabel>How are you feeling?</StyledLabel>
                     <MoodDiv>                        
-                        <MoodCard mood={1}/>
-                        <MoodCard mood={2}/>
-                        <MoodCard mood={3}/>
-                        <MoodCard mood={4}/>
-                        <MoodCard mood={5}/>
-                        <MoodCard mood={6}/>
-                        <MoodCard mood={7}/>
+                        <MoodCardDiv><MoodCard mood={1}/></MoodCardDiv>                        
+                        <MoodCardDiv><MoodCard mood={2}/></MoodCardDiv>
+                        <MoodCardDiv><MoodCard mood={3}/></MoodCardDiv>
+                        <MoodCardDiv><MoodCard mood={4}/></MoodCardDiv>
+                        <MoodCardDiv><MoodCard mood={5}/></MoodCardDiv>
+                        <MoodCardDiv><MoodCard mood={6}/></MoodCardDiv>
+                        <MoodCardDiv><MoodCard mood={7}/></MoodCardDiv>
                     </MoodDiv>
                 <StyledLabel>How is your day going?</StyledLabel>
                 <EntryText rows={10} />
+                <StyledLabel>Tags:</StyledLabel>
+                <TagInput/>
+                <SelectedTags/>
             </EntryDiv>
             <ButtonDiv>
                 <StyledButton>Create Entry</StyledButton>

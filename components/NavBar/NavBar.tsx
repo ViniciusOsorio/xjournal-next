@@ -8,6 +8,8 @@ import { OuterWrapper,
          OptionsDiv,
          OptionButton } from "./NavBarStyled";
 
+import {search} from 'react-icons-kit/icomoon/search'
+
 const NavBar = () => {
 
     return(
@@ -16,12 +18,12 @@ const NavBar = () => {
             <ModeButton>Diário</ModeButton>
             <ModeButton>Comunidade</ModeButton>
             <SearchDiv>
-                <SearchButton/>
+                <SearchButton></SearchButton>
                 <SearchBar placeholder="Pesquisar"/>
             </SearchDiv>
             <OptionsDiv>
-                <OptionButton>A</OptionButton>
-                <OptionButton>B</OptionButton>
+                <OptionButton>H</OptionButton>
+                <OptionButton>E</OptionButton>
                 <OptionButton>C</OptionButton>
             </OptionsDiv>
         </OuterWrapper>

@@ -15,11 +15,11 @@ export const MoodDiv = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-bottom: 20px;
 `
 
 export const StyledLabel = styled.label`
     font-size: 18px;
+    margin-bottom: 5px;
 `
 
 export const EntryTitle = styled.input`
@@ -34,6 +34,7 @@ export const EntryText = styled.textarea`
     font-size: 15px;
     width: 100%;
     resize: none;
+    margin-bottom: 25px;
 `
 
 export const ButtonDiv = styled.div`
@@ -53,13 +54,25 @@ export const StyledButton = styled.button`
     text-align: center;
 `
 
-export const MoodCard = styled.button`
-    width: 180px;
-    height: 180px;
-    border: 1px solid black;
-    margin: 15px 0px;
+export const MoodCardDiv = styled.div`
+    width: 150px;
+    height: 150px;
+    margin-bottom: 40px ;
+    /* border: 1px solid black;
+    margin-bottom: 15px;
     justify-content: flex-start;    
     &:hover{
         border: 2px solid black;
-    }
+    } */
+`
+
+export const TagInput = styled.input`
+    width: 100%;
+    height: 30px;
+    font-size: 15px;
+`
+
+export const SelectedTags = styled.div`
+    width: 100%;
+    height: 50px;
 `

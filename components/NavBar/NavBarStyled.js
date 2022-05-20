@@ -39,6 +39,8 @@ export const SearchButton = styled.button`
     width: 20px;
     height: 20px;
     margin-left: 8px;
+    border: none;
+    background-color: transparent;
 `
 
 export const SearchDiv = styled.div`
