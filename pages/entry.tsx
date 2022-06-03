@@ -10,8 +10,13 @@ import {
     ButtonDiv,
     SelectedTags,
     MoodCardDiv,
-    TagWrapper
+    TagWrapper,
+    DeleteTag,
+    TagButton,
+    TagDiv
 } from '../styles/entryStyled';
+
+import {FaTimes} from 'react-icons/fa';
 
 const _ = require('lodash')
 
@@ -24,7 +29,7 @@ const Entry = () => {
     const [moodInput, setMoodInput] = useState(0)
     const [comparator, setComparator] = useState(0)
     const [data, setData] = useState({})
-    const tagArray = []
+    const [tagArray, setTagArray] = useState([])
 
     useEffect(() => {
         
@@ -41,8 +46,25 @@ const Entry = () => {
     const addTag = (e) => {
         e.preventDefault();
         let text = data.tag
-        tagArray.push(<TagWrapper>{text}</TagWrapper>)        
-        console.log(tagArray);
+        const key = tagArray.length + 1
+        // let array = tagArray;
+        // array.push(<TagWrapper>{text}</TagWrapper>)
+        // console.log(array)      
+        setTagArray([...tagArray, 
+            <TagWrapper>{text+' '}
+                <DeleteTag type={'button'} tagKey={key} onClick={deleteTag(key)}>
+                    <FaTimes size={15}/>
+                </DeleteTag>
+            </TagWrapper>]);
+        data.tag = null;
+    }
+
+    const deleteTag = (key) => {
+        console.log(key)
+        const array = [...tagArray]
+        array.splice(key-1,1);
+        console.log(array)
+        setTagArray(array);
     }
 
     const handleChange = (e) => {
@@ -76,6 +98,14 @@ const Entry = () => {
         setData({})
     }
 
+    const showArray = () => {
+        if (tagArray.length) {
+            for(let i = 0; i < tagArray.length ; i++){
+                tagArray[i];
+            }
+        }
+    }
+
     return (
         <OuterWrapper>
             <NavBar/>
@@ -93,16 +123,23 @@ const Entry = () => {
                         placeholder={'No pressure!'}/>
                     <form onSubmit={addTag}>
                         <StyledLabel>Tags:</StyledLabel>
-                        <TagInput placeholder={'#'} 
-                            name='tag'
-                            value={data.tag || ''}
-                            onChange={handleChange}
-                            onSubmit={() => addTag}/>
-                        <SelectedTags><TagWrapper>Teste</TagWrapper>{tagArray}</SelectedTags>
+                        <TagDiv>
+                            <TagInput placeholder={'#'}
+                                name='tag'
+                                value={data.tag || ''}
+                                onChange={handleChange}
+                                onSubmit={() => addTag}
+                            >
+                            </TagInput>
+                            <TagButton type={'submit'} disabled={!(data.tag != '') || !(data.tag != null)}>Submit</TagButton>
+                        </TagDiv>
+                        <SelectedTags>                            
+                            {tagArray}
+                        </SelectedTags>
                     </form>
                 </EntryDiv>
                 <ButtonDiv>
-                    <StyledButton onClick={() => console.log(comparator, moodInput, comparator === moodInput)}>Create Entry</StyledButton>
+                    <StyledButton onClick={() => console.log(tagArray)}>Create Entry</StyledButton>
                     <StyledButton onClick={handleClear}>Clean Form</StyledButton>
                 </ButtonDiv>
         </OuterWrapper>

@@ -80,10 +80,16 @@ export const TagInput = styled.input`
     font-size: 15px;
     padding: 10px;
     border-radius: 20px;
-    border: 1px solid black;
+    border: none;
+    &:focus{
+        outline: none;
+    }
 `
 
 export const SelectedTags = styled.div`
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     width: 100%;
     height: 50px;
     margin-top: 15px;
@@ -99,8 +105,28 @@ export const TagWrapper = styled.div`
     background-color: lightgray;
     align-items: center;
     justify-content: center;
+    margin-right: 5px;
+`
+
+export const DeleteTag = styled.button`
+    display: flex;
+    background-color: transparent;
+    border: none;
+    &:hover{
+        color: gray;
+    }
 `
 
 export const TagButton = styled.button`
-    
+    border: none;
+    border-left: 1px solid black;
+    background-color: transparent;
+
+`
+
+export const TagDiv = styled.div`
+    display: flex;
+    flex-direction: row;
+    border: 1px solid black;
+    border-radius: 20px;
 `
