@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {
     OuterWrapper,
     EntryDiv,
@@ -9,8 +9,11 @@ import {
     StyledButton,
     ButtonDiv,
     SelectedTags,
-    MoodCardDiv
+    MoodCardDiv,
+    TagWrapper
 } from '../styles/entryStyled';
+
+const _ = require('lodash')
 
 import MoodCard from '../components/MoodCard/MoodCard'
 
@@ -20,35 +23,88 @@ const Entry = () => {
 
     const [moodInput, setMoodInput] = useState(0)
     const [comparator, setComparator] = useState(0)
+    const [data, setData] = useState({})
+    const tagArray = []
+
+    useEffect(() => {
+        
+    },[])
 
     const compareMood = (num) => {
+        let values = {...data}
         setMoodInput(num)
+        values.mood = num;
+        setData(values);        
+        console.log(values)
+    }
+
+    const addTag = (e) => {
+        e.preventDefault();
+        let text = data.tag
+        tagArray.push(<TagWrapper>{text}</TagWrapper>)        
+        console.log(tagArray);
+    }
+
+    const handleChange = (e) => {
+        let values = {...data}
+        switch(e.target.name){
+            default:
+                values[e.target.name] = e.target.value;
+        }
+        
+        setData(values);
+        console.log(values)
+    }
+
+    const generateCards = () => {            
+        const cards = [];
+        for (let i=0; i<7; i++){
+            cards.push(
+            <MoodCardDiv>
+                <MoodCard name='mood' value={i+1} mood={i+1} onClick={() => compareMood(i+1)} selected={i+1 === moodInput} />
+            </MoodCardDiv>)
+        }        
+        return cards;
+    }
+
+    const handleSubmit = () => {
+
+    }
+
+    const handleClear = () => {
+        setMoodInput(0)
+        setData({})
     }
 
     return (
         <OuterWrapper>
             <NavBar/>
-            <EntryDiv>
-                <StyledLabel>How are you feeling?</StyledLabel>
-                <MoodDiv>                        
-                    <MoodCardDiv><MoodCard mood={1} onClick={() => compareMood(1)} selected={1 === moodInput}/></MoodCardDiv>                        
-                    <MoodCardDiv><MoodCard mood={2} onClick={() => compareMood(2)} selected={2 === moodInput}/></MoodCardDiv>
-                    <MoodCardDiv><MoodCard mood={3} onClick={() => compareMood(3)} selected={3 === moodInput}/></MoodCardDiv>
-                    <MoodCardDiv><MoodCard mood={4} onClick={() => compareMood(4)} selected={4 === moodInput}/></MoodCardDiv>
-                    <MoodCardDiv><MoodCard mood={5} onClick={() => compareMood(5)} selected={5 === moodInput}/></MoodCardDiv>
-                    <MoodCardDiv><MoodCard mood={6} onClick={() => compareMood(6)} selected={6 === moodInput}/></MoodCardDiv>
-                    <MoodCardDiv><MoodCard mood={7} onClick={() => compareMood(7)} selected={7 === moodInput}/></MoodCardDiv>
-                </MoodDiv>
-                <StyledLabel>How is your day going?</StyledLabel>
-                <EntryText rows={10} placeholder={'No pressure!'}/>
-                <StyledLabel>Tags:</StyledLabel>
-                <TagInput placeholder={'#'}/>
-                <SelectedTags/>
-            </EntryDiv>
-            <ButtonDiv>
-                <StyledButton onClick={() => console.log(comparator, moodInput, comparator === moodInput)}>Create Entry</StyledButton>
-                <StyledButton>Clean Form</StyledButton>
-            </ButtonDiv>
+                <EntryDiv>
+                    <StyledLabel>How are you feeling?</StyledLabel>
+                    <MoodDiv>                        
+                        {generateCards()}
+                    </MoodDiv>
+                    <StyledLabel>How is your day going?</StyledLabel>
+                    <EntryText 
+                        name='text'
+                        onChange={handleChange}
+                        value={data.text || ''}
+                        rows={10} 
+                        placeholder={'No pressure!'}/>
+                    <form onSubmit={addTag}>
+                        <StyledLabel>Tags:</StyledLabel>
+                        <TagInput placeholder={'#'} 
+                            name='tag'
+                            value={data.tag || ''}
+                            onChange={handleChange}
+                            onSubmit={() => addTag}/>
+                        <SelectedTags><TagWrapper>Teste</TagWrapper>{tagArray}</SelectedTags>
+                    </form>
+                </EntryDiv>
+                <ButtonDiv>
+                    <StyledButton onClick={() => console.log(comparator, moodInput, comparator === moodInput)}>Create Entry</StyledButton>
+                    <StyledButton onClick={handleClear}>Clean Form</StyledButton>
+                </ButtonDiv>
         </OuterWrapper>
     )
 }

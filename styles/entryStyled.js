@@ -54,6 +54,12 @@ export const StyledButton = styled.button`
     font-size: 18px;
     margin: 5px;
     text-align: center;
+    border: 1px solid black;
+    border-radius: 20px;
+    &:hover{
+        border: 2px solid black;
+        background-color: #dbd9d9;
+    }
 `
 
 export const MoodCardDiv = styled.div`
@@ -74,10 +80,27 @@ export const TagInput = styled.input`
     font-size: 15px;
     padding: 10px;
     border-radius: 20px;
-    border: 1px solid black
+    border: 1px solid black;
 `
 
 export const SelectedTags = styled.div`
     width: 100%;
     height: 50px;
+    margin-top: 15px;
+`
+
+export const TagWrapper = styled.div`
+    display: flex;
+    font-size: 12px;
+    width: 100px;
+    height: 60px;
+    border: 1px solid lightgray;
+    border-radius: 30px;
+    background-color: lightgray;
+    align-items: center;
+    justify-content: center;
+`
+
+export const TagButton = styled.button`
+    
 `
