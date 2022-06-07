@@ -8,6 +8,8 @@ import { OuterWrapper,
          OptionsDiv,
          OptionButton } from "./NavBarStyled";
 
+import Link from "next/link";
+
 import {search} from 'react-icons-kit/icomoon/search'
 
 const NavBar = () => {
@@ -22,9 +24,9 @@ const NavBar = () => {
                 <SearchBar placeholder="Pesquisar"/>
             </SearchDiv>
             <OptionsDiv>
-                <OptionButton>H</OptionButton>
-                <OptionButton>E</OptionButton>
-                <OptionButton>C</OptionButton>
+                <Link href='/home'><OptionButton>H</OptionButton></Link>
+                <Link href='/entry'><OptionButton>E</OptionButton></Link>
+                <Link href=''><OptionButton>C</OptionButton></Link>
             </OptionsDiv>
         </OuterWrapper>
     )

@@ -30,6 +30,7 @@ const Entry = () => {
     const [comparator, setComparator] = useState(0)
     const [data, setData] = useState({})
     const [tagArray, setTagArray] = useState([])
+    const [tags, setTags] = useState([])
 
     useEffect(() => {
         
@@ -46,13 +47,15 @@ const Entry = () => {
     const addTag = (e) => {
         e.preventDefault();
         let text = data.tag
+        let tempTag = [...tags, data.tag]
+        setTags(tempTag)
         const key = tagArray.length + 1
         // let array = tagArray;
         // array.push(<TagWrapper>{text}</TagWrapper>)
         // console.log(array)      
         setTagArray([...tagArray, 
             <TagWrapper>{text+' '}
-                <DeleteTag type={'button'} tagKey={key} onClick={deleteTag(key)}>
+                <DeleteTag type={'button'} tagKey={key}  onClick={() => deleteTag(key)}>
                     <FaTimes size={15}/>
                 </DeleteTag>
             </TagWrapper>]);
@@ -60,7 +63,7 @@ const Entry = () => {
     }
 
     const deleteTag = (key) => {
-        console.log(key)
+        console.log(tagArray)
         const array = [...tagArray]
         array.splice(key-1,1);
         console.log(array)
@@ -90,7 +93,8 @@ const Entry = () => {
     }
 
     const handleSubmit = () => {
-
+        data.tags = tags
+        console.log(data)
     }
 
     const handleClear = () => {
@@ -139,7 +143,7 @@ const Entry = () => {
                     </form>
                 </EntryDiv>
                 <ButtonDiv>
-                    <StyledButton onClick={() => console.log(tagArray)}>Create Entry</StyledButton>
+                    <StyledButton onClick={handleSubmit}>Create Entry</StyledButton>
                     <StyledButton onClick={handleClear}>Clean Form</StyledButton>
                 </ButtonDiv>
         </OuterWrapper>
